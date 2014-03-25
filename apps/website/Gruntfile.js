@@ -55,8 +55,7 @@ module.exports = function (grunt) {
             },
             files: [
                 'Gruntfile.js',
-                'app/scripts/**/*.js',
-                'test/**/*.js'
+                'app/scripts/**/*.js'
             ]
         },
 
@@ -77,7 +76,9 @@ module.exports = function (grunt) {
         jasmine: {
             pivotal: {
                 src: [
-                    'app/script/**/*.js'
+                    'app/bower_components/underscore/underscore.js',
+                    'app/scripts/*.js',
+                    'app/scripts/**/*.js'
                 ],
                 options: {
                     specs: [
@@ -107,7 +108,8 @@ module.exports = function (grunt) {
      * Combine some other tasks into one task
      */
     grunt.registerTask('test', [
-        'jshint'
+        'jshint',
+        'jasmine'
     ]);
     grunt.registerTask('default', [
         'jshint',

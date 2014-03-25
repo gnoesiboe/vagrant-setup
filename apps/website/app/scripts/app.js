@@ -5,6 +5,10 @@ var app = angular.module('website', [
     'ngResource'
 ]);
 
+app.factory('_', function () {
+    return window._;
+});
+
 app.config([ '$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/', {

@@ -13,6 +13,12 @@ Install the grunt task dependencies with node package manager:
 npm install
 ```
 
+Install frontend dependencies
+
+```bash
+bower install
+```
+
 Watch for changes to your app files
 ===================================
 
