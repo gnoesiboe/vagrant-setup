@@ -56,8 +56,10 @@ vagrant up
 This will download the Vagrant box (if not already available) and start up a virtual machine containing both the apps. All requests to
 192.168.56.101 on the host (your laptop) will me forwarded to the virtual machine. Please do add the following lines to your hosts file:
 
+```bash
 192.168.56.101  website.vagrant.local
 192.168.56.101  api.vagrant.local
+```
 
 This will forward any request to the website.vagrant.local and api.vagrant.local to IP-Address 192.168.56.101. And then you're all setup.
 If everything is you can request website.vagrant.local and api.vagrant.local in your favorite browser and they will be interpreted by your
