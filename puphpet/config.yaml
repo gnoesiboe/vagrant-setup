@@ -7,7 +7,7 @@ vagrantfile-local:
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                oy604fcjCu6B:
+                VJaNc5Bp9UKm:
                     host: '6673'
                     guest: '22'
         provider:
@@ -26,7 +26,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            M1m7wDIE2e8r:
+            VFfl69m58tL2:
                 id: vagrant-root
                 source: ./
                 target: /var/www
@@ -72,7 +72,7 @@ apache:
         - php
         - rewrite
     vhosts:
-        eJlh7IKQ4TqF:
+        LGelajO5k1ik:
             servername: api.vagrant.local
             docroot: /var/www/apps/api/public
             port: '80'
@@ -81,9 +81,9 @@ apache:
             override:
                 - All
             custom_fragment: ''
-        3OJCUtF754UG:
-            servername: www.vagrant.local
-            docroot: /var/www/apps/website/public
+        yYIWq5SSeGtM:
+            servername: website.vagrant.local
+            docroot: /var/www/apps/website/app
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -92,6 +92,21 @@ apache:
             custom_fragment: ''
     mod_pagespeed: 0
     mod_spdy: 0
+nginx:
+    install: 0
+    vhosts:
+        OUnT91dkp8rx:
+            server_name: awesome.dev
+            server_aliases:
+                - www.awesome.dev
+            www_root: /var/www/awesome.dev
+            listen_port: '80'
+            index_files:
+                - index.html
+                - index.htm
+                - index.php
+            envvars:
+                - 'APP_ENV dev'
 php:
     install: '1'
     version: '55'
@@ -128,7 +143,7 @@ mysql:
     phpmyadmin: 0
     adminer: 0
     databases:
-        UqEBTzCZu9Wv:
+        Q4paFUFjaYqj:
             grant:
                 - ALL
             name: g4u_dev
