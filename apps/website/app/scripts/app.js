@@ -14,5 +14,13 @@ app.config([ '$routeProvider', function ($routeProvider) {
         .when('/', {
             templateUrl: 'views/homepage.html',
             controller: 'HomepageController'
-        });
+        })
+        .when('/newsitems', {
+            templateUrl: 'views/newsitems.html',
+            controller: 'NewsitemsController'
+        })
+        .otherwise({
+            redirectTo: '/'
+        })
+    ;
 }]);

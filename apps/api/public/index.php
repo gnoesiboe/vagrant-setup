@@ -14,9 +14,22 @@ $autoloader->register();
 
 header('Content-Type: application/json');
 
+//$dbh = new \PDO('pgsql:dbname=')
+
+
 echo json_encode(array(
     'success' => true,
-    'message' => '@todo create API'
+    'message' => '@todo create API',
+    'newsitems' => array(
+        array(
+            'id' => 1,
+            'title' => 'Ornare Inceptos'
+        ),
+        array(
+            'id' => 2,
+            'title' => 'Vivamus sagittis lacus'
+        )
+    )
 ));
 
 exit(0);

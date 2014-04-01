@@ -7,7 +7,7 @@ vagrantfile-local:
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                VJaNc5Bp9UKm:
+                iNvX5tiiysiR:
                     host: '6673'
                     guest: '22'
         provider:
@@ -26,8 +26,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            VFfl69m58tL2:
-                id: vagrant-root
+            v98qltx1PboC:
                 source: ./
                 target: /var/www
                 nfs: 'false'
@@ -72,7 +71,7 @@ apache:
         - php
         - rewrite
     vhosts:
-        LGelajO5k1ik:
+        ws9U1S80uauG:
             servername: api.vagrant.local
             docroot: /var/www/apps/api/public
             port: '80'
@@ -81,7 +80,11 @@ apache:
             override:
                 - All
             custom_fragment: ''
-        yYIWq5SSeGtM:
+            ssl_cert: ''
+            ssl_key: ''
+            ssl_chain: ''
+            ssl_certs_dir: ''
+        yc5rNZtwE4x2:
             servername: website.vagrant.local
             docroot: /var/www/apps/website/app
             port: '80'
@@ -90,12 +93,16 @@ apache:
             override:
                 - All
             custom_fragment: ''
+            ssl_cert: ''
+            ssl_key: ''
+            ssl_chain: ''
+            ssl_certs_dir: ''
     mod_pagespeed: 0
     mod_spdy: 0
 nginx:
     install: 0
     vhosts:
-        OUnT91dkp8rx:
+        nwDli2ePM8hm:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -138,23 +145,15 @@ drush:
     settings:
         drush.tag_branch: 6.x
 mysql:
-    install: '1'
+    install: 0
     root_password: test123
     phpmyadmin: 0
     adminer: 0
-    databases:
-        Q4paFUFjaYqj:
-            grant:
-                - ALL
-            name: g4u_dev
-            host: localhost
-            user: g4u_dev
-            password: test123
-            sql_file: ''
+    databases: {  }
 postgresql:
-    install: 0
+    install: '1'
     settings:
-        root_password: '123'
+        root_password: '1234'
         user_group: postgres
         encoding: UTF8
         version: '9.3'
