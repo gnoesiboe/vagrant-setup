@@ -1,0 +1,6 @@
+.idea
+.vagrant
+apps/website/node_modules
+apps/website/app/bower_components
+apps/website/app/dist
+apps/api/vendor
